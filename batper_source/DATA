@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main(){
+	FILE *charge_now, *charge_full;
+	int chr_now, chr_full;
+
+	charge_now = fopen("/sys/class/power_supply/BAT0/charge_now", "r");
+	if(charge_now==NULL){
+		perror("error opening file");
+		return 1;
+	}
+
+	charge_full = fopen("/sys/class/power_supply/BAT0/charge_full", "r");
+	if(charge_full==NULL){
+		perror("error opening file");
+		fclose(charge_now);
+		return 1;
+	}
+
+	if(fscanf(charge_now, "%d", &chr_now) != 1){
+		perror("error reading battery level");
+		fclose(charge_now);
+		fclose(charge_full);
+		return 1;
+	}
+
+	if(fscanf(charge_full, "%d", &chr_full) != 1){
+		perror("error reading battery capacity");
+		fclose(charge_now);
+		fclose(charge_full);
+		return 1;
+	}
+
+	fclose(charge_now);
+	fclose(charge_full);
+
+	chr_full /= 1000;
+
+	int chr_percent = chr_now / chr_full,
+		chr_units = chr_percent % 10,
+		chr_tens = chr_percent / 10;
+
+	printf("%d.%d\%", chr_tens, chr_units);
+
+	return 0;
+}
