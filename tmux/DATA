@@ -1,0 +1,27 @@
+set -g prefix C-s
+set-window-option -g mode-keys vi
+bind C-s send-prefix
+bind a copy-mode -e
+bind X kill-window
+bind d split-window -h
+bind s split-window -v
+bind m select-window -n
+bind n select-pane -l
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+bind C-y resize-pane -L
+bind C-u resize-pane -D
+bind C-i resize-pane -U
+bind C-o resize-pane -R
+
+set-option -sg escape-time 10
+set-option -g focus-events on
+set-option -g default-terminal "tmux-256color"
+
+set-option -ga terminal-overrides ',xterm:Tc'
+
+set -g status-right '#(batper)% <chronos> %h-%d %H:%M '
+
+bind P run "tmux capture-pane; tmux save-buffer /home/chronos/user/work/misc/tmux.log; tmux delete-buffer"
