@@ -1,0 +1,15 @@
+escape ^Ss
+bind h focus left
+bind j focus down
+bind k focus up
+bind l focus right
+bind ^d remove
+bind s split -h
+bind d split -v
+bind ^y resize -h -1
+bind ^o resize -h +1
+bind ^i resize -v +1
+bind ^u resize -v -1
+bind x quit
+backtick 1 1 1 batper
+hardstatus alwayslastline "%{= wk}%= %1`%%  <chronos> %C  %D %M %d %Y"
