@@ -4,12 +4,16 @@ bind j focus down
 bind k focus up
 bind l focus right
 bind ^d remove
-bind s split -h
-bind d split -v
+bind s eval "split -h" "focus" "screen"
+bind d eval "split -v" "focus" "screen"
+bind ^u resize -h +1
 bind ^y resize -h -1
-bind ^o resize -h +1
 bind ^i resize -v +1
-bind ^u resize -v -1
+bind ^o resize -v -1
 bind x quit
+defflow off
+altscreen on
 backtick 1 1 1 batper
-hardstatus alwayslastline "%{= wk}%= %1`%%  <chronos> %C  %D %M %d %Y"
+# hardstatus alwayslastline "%{= gk}%= %1`%%  <chronos> %C  %D %M %d %Y"
+hardstatus alwayslastline "%{Rk}%?%{dd}%E ESC %{Rk}%:     %?%=%?%{gk} %-Lw%?%{kW} %n*%f%t%?(%u)%? %{= gk}%?%+Lw %{Rk}%:%{Rk} %?%= %{= gk} %1`%%  <chronos> %C %M %d "
+startup_message off
