@@ -15,5 +15,5 @@ defflow off
 altscreen on
 backtick 1 1 1 batper
 # hardstatus alwayslastline "%{= gk}%= %1`%%  <chronos> %C  %D %M %d %Y"
-hardstatus alwayslastline "%{Rk}%?%{dd}%E ESC %{Rk}%:     %?%=%?%{gk} %-Lw%?%{kW} %n*%f%t%?(%u)%? %{= gk}%?%+Lw %{Rk}%:%{Rk} %?%= %{= gk} %1`%%  <chronos> %C %M %d "
+hardstatus alwayslastline "%{Wk}%?%{gk}%E ESC %{Wk}%:     %?%=%?%{gk} %-Lw%?%{kW} %n*%f%t%?(%u)%? %{= gk}%?%+Lw %{Wk}%:%{Wk} %?%= %{= gk} %1`%%  <chronos> %C %M %d "
 startup_message off

@@ -30,4 +30,9 @@ if [ "$PWD" = "$HOME" ]; then
 	cd /home/chronos/user/work
 fi
 
+if [ "$TERM" = "screen" ]; then
+	stty -ixon
+	export TERM=screen-256color
+fi
+
 clear
