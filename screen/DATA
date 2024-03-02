@@ -10,6 +10,7 @@ bind ^u resize -h +1
 bind ^y resize -h -1
 bind ^i resize -v +1
 bind ^o resize -v -1
+bind a copy
 bind x quit
 defflow off
 altscreen on
