@@ -6,6 +6,7 @@ if [ $1 ]; then
 
 		for subdir in */; do
 			if [ "$pall" = "y" ]; then
+				echo "Writing entry $subdir"
 				cp $subdir/DATA $(cat "$subdir/loc.txt")
 			else
 				bash pull.sh $subdir

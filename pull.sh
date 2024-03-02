@@ -7,6 +7,7 @@ if [ $1 ]; then
 		read -p "Write to $file_path? (y/n): " confirm
 
 		if [ "$confirm" = "y" ]; then
+			echo "Writing entry $1"
 			cp $1/DATA $file_path
 		else
 			echo "Aborted"
