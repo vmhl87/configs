@@ -24,7 +24,7 @@ fi
 
 # Put your fun stuff here.
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/usr/local/opt/nvim-linux64/bin"
 
 if [ "$PWD" = "$HOME" ]; then
 	cd /home/chronos/user/work
