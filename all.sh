@@ -2,7 +2,7 @@ if [ $1 ]; then
 	if [ "$1" = "pull" ]; then
 		echo "Pulling all"
 
-		read -p "Do you want to push all? (y/n): " pall
+		read -p "Do you want to pull all? (y/n): " pall
 
 		for subdir in */; do
 			if [ "$pall" = "y" ]; then
