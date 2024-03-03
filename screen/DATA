@@ -14,7 +14,28 @@ bind a copy
 bind x quit
 defflow off
 altscreen on
+defscrollback 4000
 backtick 1 1 1 batper
-# hardstatus alwayslastline "%{= gk}%= %1`%%  <chronos> %C  %D %M %d %Y"
-hardstatus alwayslastline "%{Wk}%?%{gk}%E ESC %{Wk}%:     %?%=%?%{gk} %-Lw%?%{kW} %n*%f%t%?(%u)%? %{= gk}%?%+Lw %{Wk}%:%{Wk} %?%= %{= gk} %1`%%  <chronos> %C %M %d "
+hardstatus alwayslastline "%{= Wk}%?%{= gk}%E ESC %{= Wk}%:     %?%=%?%{= kW} %-Lw%?%{= gk} %n %t%?(%u)%? %{= kW}%?%+Lw %{= Wk}%:%{= Wk} %?%= %{= gk} %1`%%  <chronos> %C %m/%d "
 startup_message off
+
+# layout new default
+# select 1
+# layout new cp
+# screen
+# split -v
+# resize -h +5
+# focus right
+# screen
+# split
+# resize -v -4
+# focus down
+# screen
+# focus left
+
+# layout attach default
+# layout select default
+
+# bind m layout select cp
+
+bind m eval "split -v" "resize -h +5" "focus right" "screen" "split" "resize -v -4" "focus down" "screen" "focus left"
