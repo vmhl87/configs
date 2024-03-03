@@ -1,6 +1,0 @@
-#!/bin/bash
-if [ $1 ]; then
-	cat /home/chronos/user/work/misc/tmux.log >> $1
-else
-	echo "destination file not found"
-fi

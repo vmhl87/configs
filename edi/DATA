@@ -1,2 +1,0 @@
-#!/bin/bash
-nvim -c 'set noshowmode noruler laststatus=0 noshowcmd norelativenumber' /home/chronos/user/work/misc/tmux.log
