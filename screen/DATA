@@ -1,4 +1,5 @@
 escape ^Ss
+shell /bin/bash
 bind h focus left
 bind j focus down
 bind k focus up

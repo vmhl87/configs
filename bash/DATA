@@ -26,9 +26,12 @@ fi
 
 export PATH="$PATH:/usr/local/opt/nvim-linux64/bin"
 
-if [ "$PWD" = "$HOME" ]; then
+if [ "$PWD" = "$HOME" ] || [ "$PWD" = "/" ]; then
 	cd /home/chronos/user/work
 fi
+
+PS1=$(echo $PS1 | sed -e "s/\\\h/ragnarok/g")
+PS1+=" "
 
 if [ "$TERM" = "screen" ]; then
 	stty -ixon
