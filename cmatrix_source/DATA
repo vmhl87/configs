@@ -894,11 +894,10 @@ if (console) {
 				get_battery(&bat_tens, &bat_units);
 			}
 
-			int f_len = strlen(msg)+4;
-
+			int f_len = strlen(msg)+2;
             //Write message
             move(msg_x, msg_y-2);
-            addch(' ');
+            addstr("│");
             addch(' ');
 
 			for (int x = 0; x < strlen(msg); x++) {
@@ -916,23 +915,35 @@ if (console) {
 					addch('.');
 					addch('0' + bat_units);
 					f_len++;
+				} else if(msg[x] == '^') {
+					time_t rawtime = time(0);
+					struct tm *loc = localtime(&rawtime);
+					f_len += 4;
+					addch('0' + (loc->tm_hour)/10);
+					addch('0' + (loc->tm_hour)%10);
+					addch(':');
+					addch('0' + (loc->tm_min)/10);
+					addch('0' + (loc->tm_min)%10);
 				} else {
 					addch(msg[x]);
 				}
 			}
 
             addch(' ');
-            addch(' ');
-
+            addstr("│");
             //Add space before message
             move(msg_x-1, msg_y-2);
+			addstr("┌");
             for (i = 0; i < f_len; i++)
-                addch(' ');
+                addstr("─");
+			addstr("┐");
 
             //Add space after message
             move(msg_x+1, msg_y-2);
+			addstr("└");
             for (i = 0; i < f_len; i++)
-                addch(' ');
+                addstr("─");
+			addstr("┘");
         }
 
         napms(update * 10);
