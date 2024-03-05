@@ -7,7 +7,7 @@ if [ $1 ]; then
 		if [ -f "$file_path" ]; then
 			cp $file_path $1/DATA
 		else
-			echo "Could not find file"
+			echo "Couldn't find file"
 		fi
 	else
 		echo "Couldn't find directory"

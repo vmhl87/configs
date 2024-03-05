@@ -1,0 +1,36 @@
+#!/bin/bash
+
+init_screen() {
+	stty -echo
+	tput smcup
+	tput civis
+	tput clear
+	trap cleanup HUP TERM
+}
+
+cleanup() {
+	tput reset
+	tput rmcup
+	tput cnorm
+	stty echo
+	printf "$SGR0"
+	exit 0
+}
+
+main() {
+	init_screen
+
+	echo ""
+	echo ""
+	echo "     <chronos@ragnarok>"
+
+	trap break INT
+
+	while [ "a" = "a" ]; do
+		E="hi"
+	done
+
+	cleanup
+}
+
+[[ "$0" != "$BASH_SOURCE" ]] || main "$0"

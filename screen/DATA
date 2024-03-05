@@ -19,24 +19,9 @@ defscrollback 4000
 backtick 1 1 1 batper
 hardstatus alwayslastline "%{= Wk}%?%{= gk}%E ESC %{= Wk}%:     %?%=%?%{= kW} %-Lw%?%{= gk} %n %t%?(%u)%? %{= kW}%?%+Lw %{= Wk}%:%{= Wk} %?%= %{= gk} %1`%%  <chronos> %C %m/%d "
 startup_message off
-
-# layout new default
-# select 1
-# layout new cp
-# screen
-# split -v
-# resize -h +5
-# focus right
-# screen
-# split
-# resize -v -4
-# focus down
-# screen
-# focus left
-
-# layout attach default
-# layout select default
-
-# bind m layout select cp
+ layout select cp
 
 bind m eval "split -v" "resize -h +5" "focus right" "screen" "split" "resize -v -4" "focus down" "screen" "focus left"
+
+blankerprg screensaver
+idle 60 blanker
