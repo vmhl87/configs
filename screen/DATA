@@ -25,3 +25,4 @@ bind m eval "split -v" "resize -h +5" "focus right" "screen" "split" "resize -v 
 
 blankerprg screensaver
 idle 60 blanker
+bind L blanker

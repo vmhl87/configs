@@ -901,33 +901,61 @@ if (console) {
             addch(' ');
 
 			for (int x = 0; x < strlen(msg); x++) {
-				if (msg[x] == '&') {
-					if (bat_tens > 99) {
-						addch('1');
+				if (msg[x] == '\\') {
+					x++;
+					f_len -= 2;
+					if (msg[x] == 'b') {
 						f_len++;
-					}
-					if (bat_tens > 9) {
-						addch('0' + (bat_tens/10)%10);
+						if (bat_tens > 99) {
+							addch('1');
+							f_len++;
+						}
+						if (bat_tens > 9) {
+							addch('0' + (bat_tens/10)%10);
+							f_len++;
+						}
+						addch('0' + bat_tens%10);
 						f_len++;
+						addch('.');
+						addch('0' + bat_units);
+						f_len++;
+					} else if(msg[x] == 'h') {
+						time_t rawtime = time(0);
+						struct tm *loc = localtime(&rawtime);
+						f_len += 2;
+						addch('0' + (loc->tm_hour)/10);
+						addch('0' + (loc->tm_hour)%10);
+					} else if(msg[x] == 'm') {
+						time_t rawtime = time(0);
+						struct tm *loc = localtime(&rawtime);
+						f_len += 2;
+						addch('0' + (loc->tm_min)/10);
+						addch('0' + (loc->tm_min)%10);
+					} else if(msg[x] == 'R') {
+						attron(COLOR_PAIR(COLOR_RED));
+					} else if(msg[x] == 'G') {
+						attron(COLOR_PAIR(COLOR_GREEN));
+					} else if(msg[x] == 'B') {
+						attron(COLOR_PAIR(COLOR_BLUE));
+					} else if(msg[x] == 'Y') {
+						attron(COLOR_PAIR(COLOR_YELLOW));
+					} else if(msg[x] == 'C') {
+						attron(COLOR_PAIR(COLOR_CYAN));
+					} else if(msg[x] == 'M') {
+						attron(COLOR_PAIR(COLOR_MAGENTA));
+					} else if(msg[x] == 'W') {
+						attron(COLOR_PAIR(COLOR_WHITE));
+					} else {
+						f_len += 2;
+						addch('\\');
+						addch(msg[x]);
 					}
-					addch('0' + bat_tens%10);
-					f_len++;
-					addch('.');
-					addch('0' + bat_units);
-					f_len++;
-				} else if(msg[x] == '^') {
-					time_t rawtime = time(0);
-					struct tm *loc = localtime(&rawtime);
-					f_len += 4;
-					addch('0' + (loc->tm_hour)/10);
-					addch('0' + (loc->tm_hour)%10);
-					addch(':');
-					addch('0' + (loc->tm_min)/10);
-					addch('0' + (loc->tm_min)%10);
 				} else {
 					addch(msg[x]);
 				}
 			}
+
+			attron(COLOR_PAIR(COLOR_WHITE));
 
             addch(' ');
             addstr("│");

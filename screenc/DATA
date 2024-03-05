@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+sudo initctl $1 powerd
+
+if [ $1 = "stop" ]; then
+	touch /home/chronos/user/work/misc/screensaver.on
+else
+	rm /home/chronos/user/work/misc/screensaver.on
+fi
