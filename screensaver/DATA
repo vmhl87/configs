@@ -1,7 +1,11 @@
 #!/bin/bash
 
-if [ -f /home/chronos/user/work/misc/screensaver.on ]; then
-	cmatrix -ab -u4 -M "\C<\Wchronos\C@\Wragnarok\C>\W   \h\C:\W\m  \b\C%"
+TYPE="stars"
+
+if [ -f /home/chronos/user/work/misc/screensaver.on ] || [ $1 ]; then
+	bash "/home/chronos/user/work/misc/matrix/$TYPE.sh"
+	# matrix "\C<\Wchronos@ragnarok\C>\W   \h\C:\W\m  \b\C%\W" # "0011 010111101010 01101011101011001 01010 1101010101 0010100101 1101001010010101 010100 101001 1001"
+	# cmatrix -ab -u4 -M "\C<\Wchronos\C@\Wragnarok\C>\W   \h\C:\W\m  \b\C%"
 # else
 	# pause
 fi
