@@ -11,3 +11,10 @@ set relativenumber
 " Relative scrolling
 nnoremap <S-j> <C-e>
 nnoremap <S-k> <C-y>
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+
+" Folds
+set foldmethod=indent
+set foldlevel=66
+nnoremap <space> za

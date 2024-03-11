@@ -17,7 +17,7 @@ defflow off
 altscreen on
 defscrollback 4000
 backtick 1 1 1 batper
-hardstatus alwayslastline "%{= Wk}%?%{= gk}%E ESC %{= Wk}%:     %?%=%?%{= kW} %-Lw%?%{= gk} %n %t%?(%u)%? %{= kW}%?%+Lw %{= Wk}%:%{= Wk} %?%= %{= gk} %1`%%  <chronos> %C %m/%d "
+hardstatus alwayslastline "%{= Wk}%?%{= gk}%E ESC %{= Wk}%:     %?%=%?%{= kW} %-Lw%?%{= gk} %n %t%?(%u)%? %{= kW}%?%+Lw %{= Wk}%:%{= Wk} %?%= %{= gk} %1`%%  <chronos> %C %d/%m "
 startup_message off
  layout select cp
 

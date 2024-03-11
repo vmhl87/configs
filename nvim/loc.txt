@@ -1,1 +1,1 @@
-/home/chronos/user/.config/nvim/init.vim
+/usr/local/.config/nvim/init.vim

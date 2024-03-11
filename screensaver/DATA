@@ -8,10 +8,8 @@ fi
 
 if [ -f /home/chronos/user/work/misc/screensaver.on ] || [ $1 ]; then
 	bash "/home/chronos/user/work/misc/matrix/$TYPE.sh"
-	# matrix "\C<\Wchronos@ragnarok\C>\W   \h\C:\W\m  \b\C%\W" # "0011 010111101010 01101011101011001 01010 1101010101 0010100101 1101001010010101 010100 101001 1001"
 	# cmatrix -ab -u4 -M "\C<\Wchronos\C@\Wragnarok\C>\W   \h\C:\W\m  \b\C%"
 else
-	echo -e "\033[33mlogout \033[0m@ \033[36m`batper`% `TZ=America/New_York date +%H:%M`\n\033[0m"
+	echo -e "\033[33mlogout \033[0m@ \033[36m`TZ=America/New_York date +%H:%M\ %d/%m` `batper`%\n\033[0m"
 	read -p "$ "
-	# pause
 fi
