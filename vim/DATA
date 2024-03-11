@@ -1,0 +1,29 @@
+" indents
+set tabstop=4
+set shiftwidth=4
+set smartindent
+
+" line numbering
+set relativenumber
+
+" do not save
+set noswapfile
+
+" relative scrolling
+nnoremap <S-j> <C-e>
+nnoremap <S-k> <C-y>
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+
+" folds
+set foldmethod=indent
+set foldlevel=66
+nnoremap <space> za
+
+" searching
+set incsearch
+set hlsearch
+
+" background
+set background=light
+syntax on
