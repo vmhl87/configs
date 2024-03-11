@@ -18,3 +18,9 @@ nnoremap <C-k> <C-u>
 set foldmethod=indent
 set foldlevel=66
 nnoremap <space> za
+
+" status bar
+set laststatus=0
+
+" theme
+set background=light
